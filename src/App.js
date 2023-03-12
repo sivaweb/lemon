@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Little Lemon
+          Little Lemon Restaurant
         </a>
       </header>
     </div>
