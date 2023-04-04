@@ -1,10 +1,18 @@
+import Header from "./components/Header";
+
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-     <h1>Little Lemon restaurant</h1>\
-     <div><p>i am working on little lemon project, reserve a table</p></div>
-    </div>
+    <Routes> 
+    <Route path="/" element={<HomePage />}></Route>
+    <Route path="/" element={<Header/>}></Route>
+    <Route path="/booking" element={<BookingPage />}></Route>
+</Routes>
+  
+ 
+    
   );
 }
 
