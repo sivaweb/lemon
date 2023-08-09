@@ -19,18 +19,17 @@ to test the applicaiton,
 Open in application in browser: 
 [http://localhost:3000](http://localhost:3000) to view in  browser.
 
-
 ## Project wireframe
-https://github.com/sivaweb/lemon/blob/main/docs/LittleLemonWireframe.JPG
+https://raw.githubusercontent.com/sivaweb/lemon/main/docs/LittleLemonWireframe.jpg
     
 ## Application Home Page
-https://github.com/sivaweb/lemon/blob/main/docs/HomePage.JPG
+https://raw.githubusercontent.com/sivaweb/lemon/main/docs/HomePage.JPG
 
 ## Application Reservation Page
-https://github.com/sivaweb/lemon/blob/main/docs/BookingPage.JPG
+https://raw.githubusercontent.com/sivaweb/lemon/main/docs/BookingPage.JPG
 
 ## Application Confirmation Page
-https://github.com/sivaweb/lemon/blob/main/docs/ConfirmationPage.JPG
+https://raw.githubusercontent.com/sivaweb/lemon/main/docs/ConfirmationPage.JPG
 
 
  
