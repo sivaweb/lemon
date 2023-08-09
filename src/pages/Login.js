@@ -1,10 +1,11 @@
 
 import { Formik } from "formik";
+
 import * as Yup from "yup";
 function Login() {
   
 
-// Creating schema
+
 const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email is a required field")
@@ -16,7 +17,7 @@ const schema = Yup.object().shape({
 
   return (
       <div>
-       <Formik
+            <Formik
         validationSchema={schema}
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {
@@ -33,7 +34,7 @@ const schema = Yup.object().shape({
         }) => (
           <div className="login">
             <div className="form">
-         
+          
               <form noValidate onSubmit={handleSubmit}>
                 <span>LOGIN</span>
                 <input
@@ -63,17 +64,18 @@ const schema = Yup.object().shape({
                <p className="error">
                   {errors.password && touched.password && errors.password}
                 </p>
-                 <button type="submit" width="full">Login</button>
+                 <button type="submit" >Login</button>
               </form>
+          
             </div>
           </div>
         )}
       </Formik>
       </div>
    );
-        }
+   }
+   export default Login;
 
 
 
  
-export default Login;

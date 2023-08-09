@@ -1,219 +1,931 @@
 
- @media (max-width: 700px) {
-  #root{
-  background-color:red;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-  /* display: flex;
-  flex-direction: column;
-  gap: 10rem;
-  padding-top: 10rem;
-
-}*/
-/* #root {
-  display: flex;
-  flex-direction: column;
+#root {
+width: 100%;
+height:100%;
 }
 html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-} */
+body,#root,
+.App {
+  font-family:  Karla;
+  font-family: Markazi Text;
+ } 
 
 /****Header.js navbar CSS**/
 .navbar {
   width: 100%;
-  height: 100px;
+  height: 7rem;
   background-color: #fff;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  font-family: karla;
+  font-weight: 500;
+  font-size: 1.8rem;
+  position:sticky;
+  top:0;
+  padding: 2rem;
 }
 .navbar a {
   color:#333;
   text-decoration: none;
-  margin: 20px;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 1.6rem;
+  font-family: karla;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
-
 .navbar .nav-leftWrapper img {
-  width: 15rem;
-  height: 4rem;
-}
-
-.navbar .nav-rightWrapper {
-  flex: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family:"Karla", "Markazi Text";;
+  width: 20rem;
+  height: 3rem;
 }
 .navbar .nav-leftWrapper {
-  flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  padding-left: 1.5rem;
-}
+   padding-left: 1.5rem;
+ }
 .navbar .nav-rightWrapper {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   text-align: center;
-  font-family:"Karla", "Markazi Text";
-  padding-right: 50px;
-  font-size: 1.5rem;
-
+  padding-right: 5rem;
+}
+.active{
+  background-color: #F4CE14;
 }
 /* <ul> */
-.navbar-menu{
+.nav-rightWrapper ul{
   display: flex;
   justify-content: space-between;
   max-width: 100%;
   list-style:none;
   text-align: center;
+   
+}
+.nav-rightWrapper ul.open{
+  display: flex;
+
 }
 /*li*/
 .navbar-menuitem{
-   font-family: "Karla", "Markazi Text";
+  display:block;
  text-transform: none;
+ text-decoration: none;
+ padding: 0.5rem;
 }
-/**CallToActioncss**/
-.call-to-A{
-  display:grid; 
-  width:100%;
- grid-template-columns: 1fr 1fr ;
-  background-color:#495E57;
-  height:20rem;
-  font-family: "Karla";
-  font-size: 1.2rem;
+.navbar-menuitem a:not(avtive):hover{
+  background-color:#EDEFEE;
+}
+.menu{
+  display: none;
+  position: absolute;
+  top:0.75rem;
+  right:0.5rem;
+  flex-direction:column;
+  justify-content: space-between;
+  width:2.25rem;
+  height:2rem;
+  background-color:#fff;
  }
+.menu span{
+  width:100%;
+  height:0.4rem;
+  background-color: #333;
+  border-radius: 0.2rem;
+}
+@media screen and (max-width:768px)
+{
+  .menu{
+    display: flex;/*burger*/
+    }
+  .nav-rightWrapper{
+    display: flex;
+  }
+  .nav-rightWrapper ul{
+    display:none;/**burger menu**/
+    flex-direction: column;
+    height: 50rem;
+    background-color:#495E57;
+    overflow:visible;
+    width: auto;
+    border-radius: 1.6rem;
+    padding: 1rem;
+   }
+  .navbar-menuitem{
+     text-align: center;
+   }
+  }
+   @media (min-width: 769px) and (max-width:1280px){
+        .menu{
+          display: flex;/*burger*/
+          }
+        .nav-rightWrapper{
+          display: flex;
+          width: auto;
+          }
+        .nav-rightWrapper ul{
+          display:none;/**burger menu**/
+          flex-direction: column;
+          height: 50rem;
+          width: auto;
+          overflow:visible;
+           background-color:#495E57;
+           padding: 1rem;
+           border-radius: 1.6rem;
+        }
+        .navbar-menuitem{
+           text-align: center;
+         }
+         } 
+/**CallToActioncss**/
 
+.call-to-A{
+  min-width:100%;
+  min-height:25rem;
+  display:grid; 
+  grid-template-columns: 1fr 1fr  ;
+  background-color:#495E57;
+  margin: 0;
+  }
 .call-right img{
-  transform: translateY(10%);
+  transform: translateY(20%);
   border-radius: 1.6rem;
-  width: 20rem;
-  aspect-ratio: 7/ 8;
+  width: 40rem;
+  height:25rem;
+  aspect-ratio: 5/ 8;
   object-fit: cover;
 }
-
 .call-left h1 {
-  color:#F4CE14
+  font-family: Markazi Text;
+  font-size: 6.4rem;
+  font-weight:500;
+  color: #f4ce14;
+  margin: 0;
+}
+.call-left h2 {
+  font-size: 4rem;
+  font-family: Markazi Text;
+  font-weight:400;
+  color:#fff; 
+  margin:0;
 }
 .call-left h2,p {
 color:#fff;
-
 }
 .call-left p{
-line-height: 3rem;
-}
+font-size: 1.6rem;
+font-family: karla;
+font-weight: 400;
 
+}
 .call-btn{
  width:15rem;
  color:#495E57;
  height:3rem;
- margin-top: 2rem;
+ margin-top: 1rem;
  background-color:#F4CE14;
-font-size: 1.6rem;
-font-weight: bold;
-border-radius: 1.6rem;
-text-align: center;
-box-shadow:#F4CE14;
+ font-size: 1.8rem;
+ font-family: Karla;
+ font-weight: 500;
+ border-radius: 1.6rem;
+ border:0;
+ text-align: center;
+
 }
 .call-btn a:link {
-
-
-
-    font-family: 'Karla', sans-serif;
-
-    text-decoration: none;
+   font-family: Karla;
+   font-size: 1.8rem;
+   font-weight: 500;
+  text-decoration: none;
+  color: #333;
   }
-  
+ @media (max-width: 768px)  
+ {
+  .call-to-A{
+  display:grid; 
+  grid-template-columns: repeat(1fr)  ;
+  width: 100%;
+     }
+    .call-right img {
+      width: auto;
+       }
+    }
+    @media (min-width: 769px) and (max-width:1280px){
+      .call-to-A{
+        display:grid; 
+        grid-template-columns: repeat(1fr)  ;
+        width: 100%;
+           }
+          .call-right img {
+            width: auto;
+             }
+      } 
+/***specials***/
+.week-spls{
+   color :#333;
+   min-height: 45rem;
+}
+.week-spls h1{
+  font-family: karla;
+  font-size: 2rem;
+  font-weight:700;
+  margin: 1rem;
+}
+.specials{
+display: grid;
+grid-template-columns:1fr 1fr 1fr;
+padding: 2rem;
+justify-content:space-between;
+justify-items: center;
+}
+.spls-card{
+  width: 40rem;
+  height: 60rem;
+  color:#333;
+ text-decoration: none;
+ background-color: #EDEFEE;
+}
+.spls-img img{
+width:100%;
+border-radius: 1.6rem 1.6rem 0 0;
+height:30rem;
+object-fit: cover;
+}
+.card_content_spls h2 {
+  color:#333;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-family: Karla;
+  font-weight: bold;
+  color:#333;
+}
+.price{
+  display: flex;
+  font-size: 1.8rem;
+  font-family: Karla;
+  font-weight: bold;
+  justify-content: space-between;
+  }
+  .price span{
+  color:#b15252;
+  font-weight: bold;
+  }
+.card_content_spls p {
+  color:#333;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-family: Karla;
+  font-weight: 400;
+  margin-top: 1rem;
+}
 
-/* @media (max-width: 700px) {
-  .call-to-A {
-     display: grid;
-     grid-template-columns: repeat(1,2fr);
-     background-color: #F4CE14;
-   }
- }
- @media (min-width: 701px) {
-  .call-to-A {
-    background-color:blue
-     /* width: min(1000px, 75rem);
-     margin: 0 auto;
-     grid-auto-flow: column;
-     gap: 1em; */
-   /* }
- } */ 
+.card_content_spls button{
+  font-size: 1.8rem;
+  font-family: Karla;
+  font-weight: 500;
+  text-transform: none;
+  margin-top: 3rem;
+  border-radius: 1.6rem;
+  border: 0.2rem solid #EDEFEE;
+  border: 0;
+  color: #333;
  
-/***bookiong formcss**/
-.bookform_container{
-  background-color: #495E57;
-  align-items: center;
-  justify-content: center;
 }
-.right_booking{
-  width:auto;
-  height: auto;
- justify-content: center;
- display:grid;
- align-items: center;
- background-color: #F4CE14;
- font-size:24px;
+@media screen and (max-width: 768px) {
+  .specials{
+       display:grid; 
+        grid-template-columns: repeat(1,4fr) ;
+        width: auto;
+         }
+         .spls-card{
+          width: auto;
+           }
+      }
+      @media (min-width: 769px) and (max-width:1280px){
+               .spls-card{
+                width: auto;
+                  }
+            }
+ /***CustomerSay***/
+/***CustomerSay**/
+.testimonial-container{
+  background-color: #EDEFEE;
+}
+ .testimonial-container h1{
+  font-size:2rem;
+  font-family: karla;
+  font-weight: bolder;
+  color :#333;
 
- font-weight: 300;
+ }
+ .testmonial{
+ width: 100%;
+min-height: 30rem;
+ display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap:2rem;
+font-family: karla;
+font-size: 1.8rem;
+font-weight: bold;
+ }
+ .customer-review{
+   width: 40rem;
+  min-height: 25rem;
+   color: #333;
+   font-family:karla;
+   padding: 1rem;
+   background-color: #EDEFEE;
+   font-size: 1.6rem;
+   font-weight:normal;
+ }
+ .customer-review p {
+   line-height: 1.5;
+   color: #333;
+   font-size: 1.6rem;
+   font-family: karla;
+   font-weight: 400;
+ }
+ .card_content strong{
+  font-family: karla;
+  font-size: 2rem;
+  font-weight: bolder;
+ }
+ .customer-review p:before {
+   content: "“";
+   color: #333;
+   font-size: 2rem;
+   font-family: karla;
+   font-weight:normal;
+ }
+ .customer-review p:after {
+   content: "”";
+   color:#333;
+   font-size: 1.6rem;
+   font-family: karla;
+   font-weight: 400;
+   line-height: 0;
+ }
+ @media(max-width: 460px) {
+  .testmonial{
+    display:grid; 
+     grid-template-columns: repeat(1,4fr) ;
+    width:auto;
+     }
+     .customer-review {
+          
+      width: auto;
+        }
+    }
+ 
+  @media screen and (max-width: 768px) {
+    .testmonial{
+         display:grid; 
+          grid-template-columns: repeat(1,4fr) ;
+           }
+        }
+        @media screen and (max-width: 768px) {
+        .customer-review {
+          
+          width: auto;
+            }
+          }
+          @media (min-width: 769px) and (max-width:1280px){
+            .customer-review {
+                  width: auto;
+                }
+         }
+ /***Chicago **/
+.chicago-section{
+  width: 100%;
+  min-height: 30rem;
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   padding: 1rem;
+  
+ }
+ .chicago-section h1{
+  font-size:4rem;
+  font-family: Markazi Text;
+  font-weight: 500;
+  color :#333;
+ }
+ .chicago-section img{
+   width: 30rem;
+   min-height:20rem ;
+   border-radius:1.6rem;
+ }
+ .chicago-section p {
+  line-height: 1.5;
+  color: #333;
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight: 400;
+
 }
+.chicago-section h2 {
+  color: #333;
+  font-size: 1.8rem;
+  font-family: karla;
+  font-weight: bold;
+
+}
+ .chicago-container{
+   display: grid;
+  grid-template-columns: repeat(2,1fr);
+ }
+ .chefa {
+   border-radius: 1.6rem;
+     margin-right: -5.6rem;
+     margin-bottom: -3.6rem;
+    }
+   .chefb {
+   border-radius: 1.6rem;
+   }
+   @media screen and (max-width: 768px) {
+        .chicago-section{
+         display:grid; 
+         grid-template-columns: repeat(1,2fr) ;
+        width:auto;
+        padding-bottom: 5rem;
+               }
+           .chicago-section img{
+            width: 15rem;
+             }
+        }
+        @media (min-width: 769px) and (max-width:1280px){
+          .chicago-section{
+            display:grid; 
+            grid-template-columns: repeat(1,2fr) ;
+           width:auto;
+           padding-bottom: 5rem;
+                  }
+              .chicago-section img{
+               width: 15rem;
+                }
+       }
+  @media screen and (max-width: 460px) {
+    .chicago-section{
+     display:grid; 
+     grid-template-columns: repeat(1,2fr) ;
+    width:auto;
+    padding-bottom: 5rem;
+           }
+       .chicago-section img{
+        width: 10rem;
+         }
+        }
+         
+
+/***About page***/
+.about-container{
+ display:grid;
+ 
+grid-template-columns: 1fr;
+ color:#333;
+ }
+.about-info{
+background-color: #495E57;
+min-height:25rem;
+display: grid;
+grid-template-columns: 1fr 1fr;
+padding: 1rem;
+gap:20rem;
+}
+.about-info h1{
+  font-family: Markazi Text;
+  font-size: 6.4rem;
+  color:#F4CE14;
+  font-weight:500;
+  }
+.about-info p{
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight: 400;
+  color:#fff;
+  width: 70rem;
+}
+.restu-img{
+  width:50rem;
+  height: 20rem;
+  border-radius: 1.6rem;
+  margin-top: 2rem;
+}
+.about-address{
+  margin-top: 2rem;
+  padding: 1rem;
+}
+.about-address h2{
+  font-size: 1.8rem;  
+  font-family: karla;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.about-address p{
+  font-size: 1.6rem;  
+  font-family: karla;
+  font-weight: 400;
+}
+.about-address ul{
+  list-style: none;
+  display:flex;
+  flex-direction: column;
+  gap:1rem;
+  font-size: 1.6rem;  
+  font-family: karla; 
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .about-info{
+   display:grid; 
+ grid-template-columns: repeat(1,2fr);
+   width: auto;
+   gap:0;
+    }
+   .restu-img ,.about-info p
+   {
+    width: auto;
+   }
+     }
+     @media (min-width: 769px) and (max-width:1280px){
+      .about-info{
+        display:grid; 
+      grid-template-columns: repeat(1,2fr);
+        width: auto;
+        gap:0;
+         }
+        .restu-img ,.about-info p
+        {
+         width: auto;
+        }
+          }
+   
+/****menupage***/
+.rest-menu-hero{
+  background-color: #495E57;
+  min-height:25rem;
+  width: 100%; 
+}
+.rest-menu-hero h1{
+  color:#F4CE14;
+  font-family: Markazi Text;
+  font-size:6.4rem;
+  font-weight: 500;
+  
+}
+.rest-menu-hero p{
+  color:#fff;
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight: 400;
+}
+.rest-menu-hero button{
+background-color: #F4CE14;
+width: 15rem;
+height: 4rem;
+border-radius: 1.6rem;
+border:0;
+margin-top: 2rem;
+color:#333;
+font-size: 1.8rem;
+font-family: karla;
+font-weight:500;
+}
+.rest-menu-meal{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:2rem;
+  background-color: #EDEFEE;
+ margin-top: 2rem;
+ margin-bottom: 20%;
+}
+.menu-card{
+  background-color: #EDEFEE;
+  min-height:40rem;
+  border-radius: 1.6rem;
+  box-shadow: #495e57;
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight:400 ;
+}
+.menu-card h1{
+ font-size: 2rem;
+ font-family: karla;
+ font-weight: bolder;
+ color:#333;
+}
+.menu-card h2{
+  font-size: 1.8rem;
+  font-family: karla;
+  font-weight: bold;
+  color:#333;
+  margin-top: 1rem;
+ }
+ 
+.menu-card p{
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight:normal ;
+  color:#333;
+ }
+.menu-img img{
+width:100%;
+height: 15rem;
+border-radius: 1.6rem 1.6rem 0 0;
+max-height: 30%;
+object-fit: cover;
+}
+.hot_cold_drink{
+  display: flex;
+  justify-content: space-between;
+}
+.menu-card button{
+  background-color: #EDEFEE;
+  border-radius: 1.6rem;
+  font-size: 1.8rem;
+  font-family:Karla;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .rest-menu-meal{
+   display:grid; 
+   grid-template-columns: repeat(1,3fr) ;
+    }
+   }
 /***BookingForm**/
 .reservation-form{
-  background-color: #495E57;
+  color:#333;
+  padding: 2rem;
+ }
+ .res-c{
+
+  min-height: 50rem;
+ 
+ }
+.reservation-form h1{
+  font-family:karla;
+  font-size:2rem;
+  font-weight: bolder;
+  color:#333;
+  margin-bottom: 1rem;
+ }
+.name-form{
+  outline: 0;
+  background-color:#495e57;
+  width: 30rem;
+  color: #fff;;
+  border-radius:0.5rem;
+  border: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size:1.6rem;
+  font-family: "Karla";
+  font-weight: 400;
 }
-.book-btn{
+.form-btn{
   background-color: #F4CE14;
-  border-radius: 16px;
+  color:#333;
+  width:30rem;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding:1rem;
+  font-size:1.6rem;
+  font-family: karla;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
-.book-button link:a{
+
+.form-container{
+/* width: 100%; */
+ display: grid;
+ grid-template-columns: 1fr;
+ font-size: 1.6rem;
+ font-family: karla;
+ font-weight:400;
+ }
+.form-reser-info {
+   min-height:25rem;
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   background-color: #495E57;
+   color:#fff;
+   justify-content: space-between;
+ 
+}
+.form-reser-info img{
+ margin-right:40rem;
+ height:20rem;
+ border-radius: 1.6rem;
+  margin-top: 2rem;
+}
+.form-reser-info h1{
+  font-size:6.4rem;
+  font-family: Markazi Text;
+  font-weight: 500;
+  color:#F4CE14;
+ 
+}
+.form-reser-info p{
+  color:#fff;
+  font-size: 1.6rem;
+  font-family: "Karla";  
+  font-weight: 400;
+}
+@media  (max-width: 450px), (min-width: 450px)and (max-width: 768px){
+  .form-reser-info {
+   display:grid; 
+   grid-template-columns: repeat(1,1fr) ;
+    }
+    .form-reserv{
+     width: auto;
+          }
+      .name-form,.form-btn{
+         width:auto;
+       }
+     }
+     @media (min-width: 769px) and (max-width:1280px){
+          .form-reser-info {
+            display:grid; 
+            grid-template-columns: repeat(1,1fr) ;
+             }
+             .form-reserv{
+              width: auto;
+                   }
+               .name-form,.form-btn{
+                 width:auto;
+                }
+              } 
+/*** (orderonline)**/
+
+.order-container{
+width: 100%;
+ margin-bottom: 30%;
+ min-height: 30rem;
+}
+.order-confirm{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  display: grid;
+ min-height: 25rem;
+ padding-left: 5rem;
+  background-color: #495e57;
+ 
+  color:#fff;
+  
+}
+.order-confirm img{
+  width:50rem;
+  height: 20rem;
+  border-radius: 1.6rem;
+  margin-top: 2rem;
+
+}
+.order-confirm h1{
+  font-size: 6.4rem;
+  font-family:Markazi Text ;
+  font-weight: 500;
+  color:#F4CE14;
+}
+.order-confirm p{
+  font-size: 1.6rem;
+  font-family: karla;
+  font-size:400;
+   color:#fff;
+}
+.order-confirm button{
+  color:#495E57;
+  height:4rem;
+  width: 15rem;
+  margin-top: 2rem;
+  background-color:#F4CE14;
+ font-size: 1.8rem;
+ font-family: karla;
+ font-weight: 500;
+ text-align: center;
+ border-radius: 1.6rem;
+  align-items: center;
+ box-shadow:#F4CE14;
+ }
+ @media screen and (max-width: 460px) {
+  .order-confirm{
+    width: auto;
+   display:grid; 
+   grid-template-columns: repeat(1,1fr) ;
+    }
+    .order-confirm img{
+      width: auto;
+    }
+   }
+   @media  (max-width: 768px) , (min-width: 769px) and (max-width:1280px){
+    .order-confirm{
+      width: auto;
+     display:grid; 
+     grid-template-columns: repeat(1,1fr) ;
+      }
+      .order-confirm img{
+        width: auto;
+      }
+     }
+/***confirmation msg**/
+.booking-confirm-msg{
+  width:100%;
+  min-height:30rem;
+  font-family: "Karla";
+  padding: 3rem;
+  background-color:#495E57;
+  margin-bottom: 20%;
+}
+.booking-confirm-msg span{
+  font-size: 2rem;
+  font-family: Karla;
+  font-weight: bold;
+  color:#F4CE14;
+}
+.booking-confirm-msg button{
+  width: 15rem;
+  height:3rem;
+  background-color: #F4CE14;
+  font-size: 1.8rem;
+  font-family: Karla;
+  font-weight: 500;
+  border-radius: 1.8rem;
+  border:0;
   text-decoration: none;
-  background-color: #F4CE14;
+  color:#333;
 }
-/***login (orderonline)**/
+.booking-confirm-msg a{
+  text-decoration: none;
+  color: #333;
+}
+@media screen and (max-width: 768px) {
+  .booking-confirm-msg{
+      width: auto;
+    }
+   }
+   @media  (min-width: 769px) and (max-width:1280px){
+    .booking-confirm-msg{
+      width: auto;
+    }
+     }
 /****loginpage**/
 .login {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
- 
+  margin-bottom: 30%;
+  margin-left: 40%;
+  min-height :15rem;
 }
-
 .form {
-  margin-top: 10rem;
   z-index: 1;
   background:#495e57;
-  border-radius: 10px;
-  max-width:50rem;
-
-  padding: 45px;
+  border-radius: 1.6rem;
+  width:40rem;
+  min-height: 30rem;
+  padding: 4rem;
   text-align: center;
+  margin-top: 30%;
 }
 .form span {
-  font-size: 40px;
+  font-size: 2rem;
+  font-family: karla;
+  font-weight: bolder;
   color: #fff;
-  margin-bottom: 25px;
   display: block;
+  margin-bottom: 1rem;
 }
 .form button {
+  width: 15rem;
   font-family: sans-serif;
- 
   outline: 0;
   background:#F4CE14;
-  width: 100%;
+   margin-top: 1rem;
   border: 0;
-  border-radius: 16px;
-  padding: 15px;
+  border-radius: 1.6rem;
+  padding: 1.5rem;
   color: #000;
-  font-size: 14px;
+  font-size: 1.6rem;
+  font-family: karla;
+  font-weight: 400;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+ 
 }
 
 .form button:active {
@@ -228,183 +940,89 @@ box-shadow:#F4CE14;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
-  font-size: 14px;
-  font-family: sans-serif;
+  font-size: 1.6rem;
+  font-family: Karla;
+  font-weight:400;
 }
 
 .form input:focus {
   background: #F4CE14;
 }
-
-/***specials***/
-.week-spls{
-  padding-top: 10rem;
-  color :#333;
-}
-.week-spls h1{
-padding-bottom: 2rem;
-
-}
-.specials{
-   width: 100%;
-  display: flex;
-  justify-content: space-between;
-border-radius: 16px; 
-font-family: "Karla", "Markazi Text";
-font-size: 1.2rem;
-}
-
-.specials-card{
-width:50rem;
-color:#333;
-background-color:#EDEFEE;
-border-radius: 16px;
-align-items: center;
-justify-content: space-between;
-text-decoration: none;
-}
-.spls-img img{
-width:100%;
-height: 20rem;
-border-radius: 16px 16px 0 0;
- max-height: 30%;
-  object-fit: cover;
-}
-.card_content_spls p {
-  color:#333;
-  text-decoration: none;
-}
-.spls-card{
-  width: 50rem;
-}
-.price{
-display: flex;
-justify-content: space-between;
-}
-.price span{
-  color:#b15252;
-  font-weight: bold;
-}
-@media (max-width: 700px) {
-  .specials {
-     display: grid;
-     grid-template-columns: repeat(1,2fr);
-     background-color: #F4CE14;
+@media  (max-width: 460px) and (max-width: 768px) {
+  .form,.form button{
+      width: auto;
+    }
    }
- }
-
-
-/***CustomerSay***/
-/***CustomerSay**/
-.testimonial{
- font-size: 20px;
- font-family: 'Karla';
- font-weight:300;
- color:#333;
- background-color: #EDEFEE;
-
-}
-.customer-review{
-  
-  color: #333;
-  font-weight: 100;
-  letter-spacing: 0.2px;
-  margin-bottom: 4px;
- 
-  font-size: 16px;
-}
-.customer-review p {
-  font-weight: 100 !important;
-  line-height: 1.5;
-  color: #222;
-  font-size: 16px;
-  font-family: 'Karla';
-}
-.customer-review p:before {
-  content: "“";
-  color: #333;
-  font-size: 16px;
-  font-family: monospace;
-  font-weight: 100;
-}
-.customer-review p:after {
-  content: "”";
-  color:#333;
-  font-size: 26px;
-  font-family: monospace;
-  font-weight: 100;
-  line-height: 0;
-}
-.customer-avatar  {
-   width:50%;
-  background-color: #495E57;
-}
-
-
-/***Chicago **/
-.about-section{
-
- min-width: 100%;
-  display:grid;
-  padding: 50px;
-  margin-bottom: 20px;
-}
-.about-section img{
-  width: 300px;
-  border-radius:16px;
-}
-.about-container{
-  display: grid;
- grid-template-columns: repeat(2,1fr);
-}
-
-  .chefa {
-    border-radius: 16px;
-    margin-right: -3.6rem;
-    margin-bottom: -3.6rem;
-   }
-  .chefb {
-  border-radius: 16px;
-  }
+   @media  (min-width: 769px) and (max-width:1280px){
+    .form,.form button{
+      width: auto;
+    }
+     }
 
   /*****footer****/
-  .footer{
-   font-family: 'Karla';
-   color:#fff;
-   background-color: #495E57;
-  }
-footer >menu {
-  grid-template-columns: repeat(4, 1fr);
-  list-style: none;
+
+.footer-nav  {
+  min-height: 25rem;
   display: grid;
-  background-color: #495E57;
- 
+  grid-template-columns: repeat(4, 1fr);
+  font-family: Karla;
+  font-size: 1.8rem;
+  font-weight: 500;
+  list-style: none;
   color:#fff;
+  background-color: #495E57;
+  margin-bottom: 0;
+  text-decoration: none;
+  padding-top: 2rem;
 }
-.footer_nav{
-  display: flex;
-  flex-wrap: row;
-  justify-content: center;
-  align-items: center;
- padding: 2rem;
- margin-top: 3rem;
- color:#fff;
+.footer-nav h1 {
+  font-family: Karla;
+  font-size: 2rem;
+  font-weight:bolder; 
+  margin-bottom: 1rem;
 }
-/* .footer img{
+.footer img{
   margin-top: 2rem;
   background-color: #fff;
   padding: 1rem;
-} */
+}
 .footer-links{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
+  text-decoration:solid;
   justify-content: flex-start;
   color: #fff;
-    gap:1rem;
+ }
+.footer-links a{
+  text-decoration: none;
+  color:#fff;
+  font-size: 1.8rem;
+  font-family: Karla;
+  font-weight: 500;
 }
-.footer-scocial-media{
+.footer-contact-address li{
+   list-style: none;
+ }
+.footer-contact-address h1,.footer-scocial-media h1{
+  margin-bottom: 1rem;
+}
+.footer-scocial-media div{
   display: flex;
-  flex-direction: column;
-  gap:1rem;
-
+  flex-direction: row;
+ 
 }
+@media screen and (max-width: 768px) {
+  .footer-nav,.footer-links,.footer-contact-address {
+    width: auto;
+    grid-template-columns: repeat(1, 4fr);
+    display: grid;
+    gap:1rem;
+    }
+   }
+   @media (min-width: 769px) and (max-width:1280px){
+    .footer-nav,.footer-links,.footer-contact-address {
+      width: auto;
+         gap:1rem;
+      }
+ }
+  
